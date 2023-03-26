@@ -7,13 +7,13 @@ var (
 		{
 			Name:      "ls",
 			Usage:     "List installed versions",
-			UsageText: "g ls",
+			UsageText: "j ls",
 			Action:    list,
 		},
 		{
 			Name:      "use",
 			Usage:     "Switch to specified version",
-			UsageText: "g use <version>",
+			UsageText: "j use <version>",
 			Action:    use,
 		},
 	}

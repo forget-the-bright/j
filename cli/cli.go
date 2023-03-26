@@ -64,8 +64,8 @@ func init() {
 // Run 运行g命令行
 func Run() {
 	app := cli.NewApp()
-	app.Name = "g"
-	app.Usage = "Golang Version Manager"
+	app.Name = "j"
+	app.Usage = "JAVA Version Manager"
 	app.Version = build.Version()
 	app.Copyright = fmt.Sprintf("Copyright (c) 2019-%d, voidint. All rights reserved.", time.Now().Year())
 	app.Authors = []*cli.Author{
@@ -74,7 +74,7 @@ func Run() {
 
 	app.Before = func(ctx *cli.Context) (err error) {
 		ghomeDir = ghome()
-		goroot = filepath.Join(ghomeDir, "go")
+		goroot = filepath.Join(ghomeDir, "java")
 		downloadsDir = filepath.Join(ghomeDir, "downloads")
 		if err = os.MkdirAll(downloadsDir, 0755); err != nil {
 			return err
