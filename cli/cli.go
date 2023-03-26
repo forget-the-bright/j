@@ -89,14 +89,18 @@ func Run() {
 	}
 }
 
+const (
+	homeEnv   = "J_HOME"
+	mirrorEnv = "J_MIRROR"
+)
+
 // ghome 返回g根目录
 func ghome() (dir string) {
-	/* if experimental := os.Getenv(experimentalEnv); experimental == "true" {
-		if dir = os.Getenv(homeEnv); dir != "" {
-			return dir
-		}
+	//fmt.Println(os.Getenv(homeEnv))
+	if dir = os.Getenv(homeEnv); dir != "" {
+		return dir
 	}
-	homeDir, _ := os.UserHomeDir()
+	/* homeDir, _ := os.UserHomeDir()
 	return filepath.Join(homeDir, ".g") */
 	path, _ := os.Getwd()
 	return path
