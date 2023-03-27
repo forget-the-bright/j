@@ -25,12 +25,15 @@ var (
 )
 
 func init() {
-	/* ghomeDir, _ = os.Getwd()
-	goroot = filepath.Join(ghomeDir, "go")
+	ghomeDir, _ = os.Getwd()
+	fmt.Println(ghomeDir)
+	goroot = filepath.Join(ghomeDir, "java")
+	fmt.Println(goroot)
 	downloadsDir = filepath.Join(ghomeDir, "downloads")
 	os.MkdirAll(downloadsDir, 0755)
 	versionsDir = filepath.Join(ghomeDir, "versions")
-	os.MkdirAll(versionsDir, 0755) */
+	os.MkdirAll(versionsDir, 0755)
+
 	cli.AppHelpTemplate = fmt.Sprintf(`NAME:
 	{{.Name}}{{if .Usage}} - {{.Usage}}{{end}}
 

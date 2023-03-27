@@ -1,6 +1,10 @@
 package main
 
-import "github.com/forget-the-bright/j/cli"
+import (
+	"os"
+
+	"github.com/forget-the-bright/j/cli"
+)
 
 func main() {
 	/* dir, _ := os.Getwd()
@@ -10,5 +14,9 @@ func main() {
 		fmt.Println(os.Args[1])
 		cli.Use(os.Args[1]) //"1.17.9"
 	} */
-	cli.Run()
+	//cli.Run()
+	if len(os.Args) > 1 {
+		cli.Install(os.Args[1])
+	}
+
 }
