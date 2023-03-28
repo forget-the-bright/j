@@ -25,14 +25,14 @@ var (
 )
 
 func init() {
-	ghomeDir, _ = os.Getwd()
-	fmt.Println(ghomeDir)
-	goroot = filepath.Join(ghomeDir, "java")
-	fmt.Println(goroot)
-	downloadsDir = filepath.Join(ghomeDir, "downloads")
-	os.MkdirAll(downloadsDir, 0755)
-	versionsDir = filepath.Join(ghomeDir, "versions")
-	os.MkdirAll(versionsDir, 0755)
+	/* 	ghomeDir, _ = os.Getwd()
+	   	fmt.Println(ghomeDir)
+	   	goroot = filepath.Join(ghomeDir, "java")
+	   	fmt.Println(goroot)
+	   	downloadsDir = filepath.Join(ghomeDir, "downloads")
+	   	os.MkdirAll(downloadsDir, 0755)
+	   	versionsDir = filepath.Join(ghomeDir, "versions")
+	   	os.MkdirAll(versionsDir, 0755) */
 
 	cli.AppHelpTemplate = fmt.Sprintf(`NAME:
 	{{.Name}}{{if .Usage}} - {{.Usage}}{{end}}
@@ -103,10 +103,10 @@ func ghome() (dir string) {
 	if dir = os.Getenv(homeEnv); dir != "" {
 		return dir
 	}
-	/* homeDir, _ := os.UserHomeDir()
-	return filepath.Join(homeDir, ".g") */
-	path, _ := os.Getwd()
-	return path
+	homeDir, _ := os.UserHomeDir()
+	return filepath.Join(homeDir, ".j")
+	/* 	path, _ := os.Getwd()
+	   	return path */
 }
 
 // inuse 返回当前的go版本号
