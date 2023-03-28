@@ -23,7 +23,7 @@ var linux_Url_Items = []*UrlItem{
 		In: &JavaFileItem{
 			FileName: "openjdk-17+35_linux-x64_bin.tar.gz",
 			URL:      "https://download.java.net/openjdk/jdk17/ri/openjdk-17+35_linux-x64_bin.tar.gz",
-			Sha256:   "",
+			Sha256:   "aef49cc7aa606de2044302e757fa94c8e144818e93487081c4fd319ca858134b",
 		},
 		Expected:   "jdk-17",
 		SimpleName: "17",
