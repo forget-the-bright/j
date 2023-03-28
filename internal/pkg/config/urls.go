@@ -10,6 +10,7 @@ import (
 type JavaFileItem struct {
 	FileName string
 	URL      string
+	Sha256   string
 }
 type UrlItem struct {
 	In         *JavaFileItem

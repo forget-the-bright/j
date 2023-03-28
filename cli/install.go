@@ -7,6 +7,7 @@ import (
 	"path/filepath"
 
 	"github.com/forget-the-bright/j/internal/pkg/archiver"
+	"github.com/forget-the-bright/j/internal/pkg/check"
 	"github.com/forget-the-bright/j/internal/pkg/config"
 	"github.com/forget-the-bright/j/internal/pkg/download"
 
@@ -33,17 +34,22 @@ func downloadAndInstall(version string) (err error) {
 	//判断本地有没有安装包 没有就进入下载
 	if _, err := os.Stat(filename); err != nil {
 		DownloadWithProgress(ui.In.URL, filename)
+	} else {
+		if ui.In.Sha256 != check.PrintSha256(filename) {
+			DownloadWithProgress(ui.In.URL, filename)
+		}
 	}
 
 	//获取解压目标目录
 	targetV := filepath.Join(versionsDir, ui.SimpleName)
 
-	//判断判断解压目录是否存在，不存在就解压
-	if _, err := os.Stat(targetV); err != nil {
-		// 解压安装包
-		if err = archiver.Unarchive(filename, targetV, true); err != nil {
-			return cli.Exit(errstring(err), 1)
-		}
+	// 检查版本是否已经安装
+	if finfo, err := os.Stat(targetV); err == nil && finfo.IsDir() {
+		return cli.Exit(fmt.Sprintf("[g] %q version has been installed.", version), 1)
+	}
+	// 解压安装包
+	if err = archiver.Unarchive(filename, targetV, true); err != nil {
+		return cli.Exit(errstring(err), 1)
 	}
 	/* 	// 解压安装包
 	   	if err = archiver.Unarchive(filename, versionsDir); err != nil {

@@ -15,9 +15,9 @@ func main() {
 	   		cli.Install(os.Args[1])
 	   	}
 	*/
-	/* ghomeDir, _ := os.Getwd()
-	fmt.Println(ghomeDir)
-	downloadsDir := filepath.Join(ghomeDir, "downloads")
-	versionsDir := filepath.Join(ghomeDir, "versions")
-	archiver.Run_unzip(downloadsDir+"\\openjdk-19+36_windows-x64_bin.zip", versionsDir+"\\20", true) */
+	/* 	ghomeDir, _ := os.Getwd()
+	   	fmt.Println(ghomeDir)
+	   	downloadsDir := filepath.Join(ghomeDir, "downloads")
+	   	//versionsDir := filepath.Join(ghomeDir, "versions")
+	   	fmt.Println(check.PrintSha256(downloadsDir + "\\openjdk-19+36_windows-x64_bin.zip")) */
 }
