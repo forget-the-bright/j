@@ -70,7 +70,7 @@ func Run() {
 	app.Name = "j"
 	app.Usage = "JAVA Version Manager"
 	app.Version = build.Version()
-	app.Copyright = fmt.Sprintf("Copyright (c) 2019-%d, voidint. All rights reserved.", time.Now().Year())
+	app.Copyright = fmt.Sprintf("Copyright (c) 2019-%d, forget-the-bright. All rights reserved.", time.Now().Year())
 	app.Authors = []*cli.Author{
 		{Name: "wh", Email: "helloworldwh@163.com"},
 	}
