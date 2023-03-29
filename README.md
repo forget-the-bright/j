@@ -5,7 +5,12 @@ Java Version  Manager
 
 
 ## 安装
-  默认文件下载安装在用户目录下 ```.j```
+  [下载](https://github.com/forget-the-bright/j/releases) 下载自己需要的版本, 到自己自定义的目录 修改可执行文件名称为j
+  
+  默认文件下载安装在用户目录下 ```.j```目录，目录下  ```versions```, ```downloads```, ```java```  分别是本地安装目录，安装包下载目录，当前使用的java版本目录 
+
+  将 JAVA_HOME 配置为 ```USER_HOME\.j\java```  
+
   指定安装目录需要 添加环境变量 ```J_HOME```
 ## 命令
 

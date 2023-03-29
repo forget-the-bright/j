@@ -19,7 +19,7 @@ build-linux: build-linux-386 build-linux-amd64 build-linux-arm build-linux-arm64
 build-linux-386:
 	GOOS=linux GOARCH=386 $(GO) build $(GO_FLAGS) -o bin/linux-386/j
 build-linux-amd64:
-	GOOS=linux GOARCH=amd64 $(GO) build $(GO_FLAGS) -o bin/linux-amd64/j
+	GOOS=linux GOARCH=amd64 $(GO) build $(GO_FLAGS) -o bin/linux-amd64/linux_amd_x86_64_j
 build-linux-arm:
 	GOOS=linux GOARCH=arm $(GO) build $(GO_FLAGS) -o bin/linux-arm/j
 build-linux-arm64:
@@ -39,7 +39,7 @@ build-windows: build-windows-386 build-windows-amd64 build-windows-arm build-win
 build-windows-386:
 	GOOS=windows GOARCH=386 $(GO) build $(GO_FLAGS) -o bin/windows-386/j.exe
 build-windows-amd64:
-	GOOS=windows GOARCH=amd64 $(GO) build $(GO_FLAGS) -o bin/windows-amd64/j.exe
+	GOOS=windows GOARCH=amd64 $(GO) build $(GO_FLAGS) -o bin/windows-amd64/windows_amd_x86_64_j.exe
 build-windows-arm:
 	GOOS=windows GOARCH=arm $(GO) build $(GO_FLAGS) -o bin/windows-arm/j.exe
 build-windows-arm64:
