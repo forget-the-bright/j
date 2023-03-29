@@ -10,7 +10,7 @@
             "request": "launch",
             "mode": "auto",
             "program": "${fileDirname}",
-            "args": ["use" ,"18" ]
+            "args": ["ls-remote" ]
         }
     ]
 }

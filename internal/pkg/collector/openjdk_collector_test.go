@@ -2,12 +2,23 @@ package collector
 
 import (
 	"fmt"
+	"io/ioutil"
 	"net/http"
 	"strings"
 	"testing"
 
 	"github.com/PuerkitoBio/goquery"
 )
+
+func Test_GetSha256ByUrl(t *testing.T) {
+	resp, _ := http.Get("https://download.java.net/java/GA/jdk19.0.1/afdd2e245b014143b62ccb916125e3ce/10/GPL/openjdk-19.0.1_windows-x64_bin.zip.sha256")
+	defer resp.Body.Close()
+	bytes, _ := ioutil.ReadAll(resp.Body)
+	t.Run("", func(t *testing.T) {
+		fmt.Println(string(bytes))
+	})
+
+}
 
 func Test_getOpenJdkVersion(t *testing.T) {
 	resp, _ := http.Get(Collector_Archive_Url)
@@ -105,7 +116,7 @@ func test_getVersionByUrl(version, url string) *Collector {
 }
 
 func Test_getArchiveVersion(t *testing.T) {
-	Collectors = make([]*Collector, 0)
+	Archive_Releases_Collectors = make([]*Collector, 0)
 	resp, _ := http.Get(Collector_Archive_Url)
 	defer resp.Body.Close()
 	if resp.StatusCode != http.StatusOK {
@@ -137,7 +148,7 @@ func Test_getArchiveVersion(t *testing.T) {
 					collector_Item = &Collector{
 						Version: version_str,
 					}
-					Collectors = append(Collectors, collector_Item)
+					Archive_Releases_Collectors = append(Archive_Releases_Collectors, collector_Item)
 				}
 			}
 			if th.Length() == 2 {
@@ -171,7 +182,7 @@ func Test_getArchiveVersion(t *testing.T) {
 			}
 		})
 	})
-	c2 := Collectors
+	c2 := Archive_Releases_Collectors
 	fmt.Printf("len(c2): %v\n", len(c2))
 	fmt.Println(c2)
 }

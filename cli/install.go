@@ -8,6 +8,7 @@ import (
 
 	"github.com/forget-the-bright/j/internal/pkg/archiver"
 	"github.com/forget-the-bright/j/internal/pkg/check"
+	"github.com/forget-the-bright/j/internal/pkg/collector"
 	"github.com/forget-the-bright/j/internal/pkg/config"
 	"github.com/forget-the-bright/j/internal/pkg/download"
 
@@ -16,6 +17,7 @@ import (
 )
 
 func fundVersion(version string) *config.UrlItem {
+	config.Url_Items = collector.ConvertCollectorToUrlItem(collector.GetOpenJDKArchiveReleasesInfo())
 	for _, v := range config.Url_Items {
 		if v.SimpleName == version { //strings.Contains(v.SimpleName, version)
 			return v

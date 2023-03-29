@@ -10,11 +10,17 @@ var (
 			UsageText: "j ls",
 			Action:    list,
 		},
-		{
+		/* {
 			Name:      "ls-all",
 			Usage:     "List All versions",
 			UsageText: "j ls-all",
 			Action:    listAll,
+		}, */
+		{
+			Name:      "ls-remote",
+			Usage:     "List Remote versions",
+			UsageText: "j ls-remote",
+			Action:    listRemote,
 		},
 		{
 			Name:      "install",

@@ -100,11 +100,13 @@ const (
 // ghome 返回g根目录
 func ghome() (dir string) {
 	//fmt.Println(os.Getenv(homeEnv))
-	if dir = os.Getenv(homeEnv); dir != "" {
+	path, _ := os.Getwd()
+	return path
+	/* if dir = os.Getenv(homeEnv); dir != "" {
 		return dir
 	}
 	homeDir, _ := os.UserHomeDir()
-	return filepath.Join(homeDir, ".j")
+	return filepath.Join(homeDir, ".j") */
 	/* 	path, _ := os.Getwd()
 	   	return path */
 }
