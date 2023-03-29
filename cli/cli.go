@@ -100,15 +100,14 @@ const (
 // ghome 返回g根目录
 func ghome() (dir string) {
 	//fmt.Println(os.Getenv(homeEnv))
-	path, _ := os.Getwd()
-	return path
-	/* if dir = os.Getenv(homeEnv); dir != "" {
+	/* path, _ := os.Getwd()
+	return path */
+	if dir = os.Getenv(homeEnv); dir != "" {
 		return dir
 	}
 	homeDir, _ := os.UserHomeDir()
-	return filepath.Join(homeDir, ".j") */
-	/* 	path, _ := os.Getwd()
-	   	return path */
+	return filepath.Join(homeDir, ".j")
+
 }
 
 // inuse 返回当前的go版本号
