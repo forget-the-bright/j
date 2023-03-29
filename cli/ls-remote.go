@@ -20,7 +20,7 @@ func remoteVersionLength(version string) string {
 func listRemote(*cli.Context) (err error) {
 	use_version := inuse(goroot)
 	out := ansi.NewAnsiStdout()
-	rs := collector.ConvertCollectorToUrlItem(collector.GetOpenJDKArchiveReleasesInfo())
+	rs := collector.ConvertCollectorToUrlItem(collector.GetOpenJDKArchiveReleasesInfo(), false)
 	color.New(color.FgGreen).Fprintf(out, " %s\n", " version                    info")
 	for _, v := range rs {
 		if v.SimpleName == use_version { //strings.Contains(v.SimpleName, version)

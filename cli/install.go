@@ -17,9 +17,10 @@ import (
 )
 
 func fundVersion(version string) *config.UrlItem {
-	config.Url_Items = collector.ConvertCollectorToUrlItem(collector.GetOpenJDKArchiveReleasesInfo())
+	config.Url_Items = collector.ConvertCollectorToUrlItem(collector.GetOpenJDKArchiveReleasesInfo(), false)
 	for _, v := range config.Url_Items {
 		if v.SimpleName == version { //strings.Contains(v.SimpleName, version)
+			v.In.Sha256 = collector.GetSha256ByUrl(v.In.Sha256, true)
 			return v
 		}
 	}

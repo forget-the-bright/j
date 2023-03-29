@@ -48,11 +48,15 @@ func getFileNameNoSuffix(file_name string) string {
 	return strings.ReplaceAll(file_name, "."+getFileTypeByFileName(file_name), "")
 }
 
-func getSha256ByUrl(url string) string {
-	resp, _ := http.Get(url)
-	defer resp.Body.Close()
-	bytes, _ := ioutil.ReadAll(resp.Body)
-	return string(bytes)
+func GetSha256ByUrl(url string, isGetSha256 bool) string {
+	if isGetSha256 {
+		resp, _ := http.Get(url)
+		defer resp.Body.Close()
+		bytes, _ := ioutil.ReadAll(resp.Body)
+		return string(bytes)
+	} else {
+		return url
+	}
 }
 
 func getFileTypeByFileName(filename string) string {

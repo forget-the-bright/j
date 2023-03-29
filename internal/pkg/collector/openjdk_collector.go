@@ -10,7 +10,7 @@ import (
 	"github.com/forget-the-bright/j/internal/pkg/config"
 )
 
-func ConvertCollectorToUrlItem(colls []*Collector) []*config.UrlItem {
+func ConvertCollectorToUrlItem(colls []*Collector, isGetSha256 bool) []*config.UrlItem {
 	var rs = make([]*config.UrlItem, 0)
 	for _, coll := range colls {
 		var item *Op_Item
@@ -37,7 +37,7 @@ func ConvertCollectorToUrlItem(colls []*Collector) []*config.UrlItem {
 				In: &config.JavaFileItem{
 					FileName: item.FileName,
 					URL:      item.Url,
-					Sha256:   getSha256ByUrl(item.Sha256Url),
+					Sha256:   GetSha256ByUrl(item.Sha256Url, isGetSha256),
 				},
 				SimpleName: coll.Version,
 				Expected:   getFileNameNoSuffix(item.FileName),
