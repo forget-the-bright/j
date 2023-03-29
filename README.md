@@ -1,7 +1,7 @@
 # j
 Java Version  Manager
 
-![d34a2d8bb5d1f088687399f1cfe3468](https://user-images.githubusercontent.com/56473277/228175418-e709a300-8448-4b01-a11b-cbdfa2bb83a7.png)
+![image](https://user-images.githubusercontent.com/56473277/228444767-6cc15881-69a6-4ed1-8b30-f7c19413fde0.png)
 
 
 ## 安装
@@ -11,11 +11,11 @@ Java Version  Manager
 
 ### 列出
 
-列出所有可按照版本
+列出所有可安装版本
 ```
-j ls-all
+j ls-remote
 ```
-![image](https://user-images.githubusercontent.com/56473277/228176289-d5037369-8c39-4596-8274-b62c51f1c44f.png)
+![image](https://user-images.githubusercontent.com/56473277/228444893-1ae5779e-74a2-4884-9c7d-09aa533d644e.png)
 
 列出本地安装版本
 ```
